@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DwarfAI ($DWARF)</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Uncial+Antiqua&family=Open+Sans:wght@400;700&display=swap');
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #2b2b2b;
+            color: #ffffff;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+            font-size: 1.5em;
+        }
+        nav a {
+            text-decoration: none;
+            color: #ffd700;
+        }
+        .title {
+            font-family: 'Uncial Antiqua', serif;
+            font-size: 3em;
+            margin: 40px 0;
+            color: #ffd700;
+            text-shadow: 0 0 10px #ffd700, 0 0 20px #ffffff;
+        }
+        .subtitle {
+            font-size: 1.8em;
+            margin: 30px 0;
+            color: #ffd700;
+            text-shadow: 0 0 5px #ffd700;
+        }
+        .ascii-art {
+            white-space: pre;
+            margin: 40px auto;
+            font-size: 10px;
+            color: #00ff00;
+            line-height: 1.3;
+            animation: glitch 1.5s infinite;
+        }
+        @keyframes glitch {
+            0% {
+                text-shadow: 2px 2px 0 #ffd700, -2px -2px 0 #ffffff;
+                transform: translate(0, 0);
+            }
+            25% {
+                text-shadow: -2px -2px 0 #ffd700, 2px 2px 0 #ffffff;
+                transform: translate(2px, -2px);
+            }
+            50% {
+                text-shadow: 2px -2px 0 #ffd700, -2px 2px 0 #ffffff;
+                transform: translate(-2px, 2px);
+            }
+            75% {
+                text-shadow: -2px 2px 0 #ffd700, 2px -2px 0 #ffffff;
+                transform: translate(2px, 2px);
+            }
+            100% {
+                text-shadow: 2px 2px 0 #ffd700, -2px -2px 0 #ffffff;
+                transform: translate(0, 0);
+            }
+        }
+        .description {
+            margin-top: 40px;
+            font-size: 1.5em;
+            color: #ffffff;
+            padding: 0 10%;
+        }
+        .ai-functionality {
+            margin-top: 50px;
+            padding: 20px;
+            background-color: #3a3a3a;
+            border: 3px solid #ffd700;
+            color: #ffffff;
+            font-size: 1.3em;
+            text-align: left;
+            line-height: 1.6;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .ai-functionality h2 {
+            font-family: 'Uncial Antiqua', serif;
+            color: #ffd700;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .ai-functionality ul {
+            list-style-type: circle;
+            padding-left: 30px;
+        }
+        .ai-functionality ul li {
+            margin-bottom: 10px;
+        }
+        .feed-dwarf {
+            margin: 60px auto;
+            font-size: 1.3em;
+        }
+        .feed-dwarf h2 {
+            color: #ffd700;
+            font-family: 'Uncial Antiqua', serif;
+            font-size: 2em;
+        }
+        .feed-dwarf form input {
+            font-size: 1em;
+            padding: 10px;
+            margin: 15px 0;
+            width: 60%;
+            border: 2px solid #ffd700;
+            background-color: #ffffff;
+            color: #2b2b2b;
+        }
+        .feed-dwarf form button {
+            font-size: 1em;
+            padding: 10px 20px;
+            color: #ffffff;
+            background-color: #ffd700;
+            border: none;
+            cursor: pointer;
+        }
+        .voting-section {
+            margin-top: 60px;
+            font-size: 1.3em;
+            color: #ffffff;
+        }
+        .voting-section h2 {
+            font-family: 'Uncial Antiqua', serif;
+            color: #ffd700;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        .voting-section .vote-item {
+            margin: 15px auto;
+            padding: 15px;
+            width: 70%;
+            background-color: #3a3a3a;
+            border: 2px solid #ffd700;
+            color: #ffffff;
+        }
+        .voting-section button {
+            font-size: 1em;
+            padding: 10px 15px;
+            margin-left: 10px;
+            color: #2b2b2b;
+            background-color: #ffd700;
+            border: none;
+            cursor: pointer;
+        }
+        footer {
+            margin-top: 60px;
+            padding: 30px 0;
+            background-color: #111;
+            color: #888;
+            font-size: 1em;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="https://x.com/DwarfAI" target="_blank">Twitter</a>
+        <a href="https://t.me/DwarfAI" target="_blank">Telegram</a>
+    </nav>
+    <div class="title">WELCOME TO DWARF AI ($DWARF)</div>
+    <div class="ascii-art">
+        <!-- Paste your Dwarf ASCII art here -->
+    </div>
+    <div class="description">
+        The ultimate memecoin AI agent, powered by dwarven mining mastery. Uncover gems, expose fool’s gold, and let DwarfAI mine the truth.
+    </div>
+    <div class="ai-functionality">
+        <h2>How DwarfAI Works</h2>
+        <ul>
+            <li>🪓 Submit projects or influencers to DwarfAI for evaluation.</li>
+            <li>🔥 Vote to determine if they’re **Gems (Praise)** or **Fool’s Gold (FUD).**</li>
+            <li>💎 DwarfAI delivers AI-generated memes, insights, or FUD based on the votes.</li>
+        </ul>
+        <p style="text-align: center;">Join the chaos and let DwarfAI mine the truth in the crypto world.</p>
+    </div>
+    <div class="feed-dwarf">
+        <h2>Feed the Forge</h2>
+        <p>Submit a project for DwarfAI to evaluate:</p>
+        <form id="feed-dwarf-form">
+            <input type="url" id="dwarf-link" placeholder="Paste the project link here..." required>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <div class="voting-section">
+        <h2>Gem or Fool's Gold?</h2>
+        <p>Vote for the next project DwarfAI should troll or praise:</p>
+        <div id="voting-container">
+            <!-- Dynamic voting items will appear here -->
+        </div>
+    </div>
+    <footer>© 2024 DwarfAI | Memes, mining, and AI-powered chaos.</footer>
+    <script src="dwarf.js"></script>
+</body>
+</html>
