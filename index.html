@@ -13,13 +13,7 @@
             margin: 0;
             padding: 20px;
             text-align: center;
-            background-size: 400% 400%;
-            animation: backgroundShift 8s infinite;
-        }
-        @keyframes backgroundShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+            overflow-x: hidden;
         }
         nav {
             display: flex;
@@ -38,6 +32,9 @@
         nav a:hover {
             color: #ffffff;
         }
+        .title-container {
+            position: relative;
+        }
         .title {
             font-family: 'Playfair Display', serif;
             font-size: 3em;
@@ -45,43 +42,31 @@
             color: #ffd700;
             text-shadow: 0 0 10px #ffd700, 0 0 20px #ffffff;
         }
-        .ascii-art {
-            white-space: pre;
-            margin: 40px auto;
-            font-size: 10px;
-            color: #00ff00;
-            line-height: 1.3;
-            animation: glitch 1.5s infinite;
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            pointer-events: none;
+            z-index: -1;
         }
-        @keyframes glitch {
+        .particles div {
+            width: 10px;
+            height: 10px;
+            background-color: #ffd700;
+            border-radius: 50%;
+            position: absolute;
+            animation: float 3s infinite ease-in-out;
+        }
+        @keyframes float {
             0% {
-                text-shadow: 2px 2px 0 #ffd700, -2px -2px 0 #ffffff;
                 transform: translate(0, 0);
-            }
-            25% {
-                text-shadow: -2px -2px 0 #ffd700, 2px 2px 0 #ffffff;
-                transform: translate(2px, -2px);
-            }
-            50% {
-                text-shadow: 2px -2px 0 #ffd700, -2px 2px 0 #ffffff;
-                transform: translate(-2px, 2px);
-            }
-            75% {
-                text-shadow: -2px 2px 0 #ffd700, 2px -2px 0 #ffffff;
-                transform: translate(2px, 2px);
+                opacity: 1;
             }
             100% {
-                text-shadow: 2px 2px 0 #ffd700, -2px -2px 0 #ffffff;
-                transform: translate(0, 0);
+                transform: translate(50px, -100px);
+                opacity: 0;
             }
-        }
-        .description {
-            margin-top: 40px;
-            font-size: 1.6em;
-            color: #ffffff;
-            line-height: 1.6;
-            padding: 0 10%;
-            text-align: center;
         }
         .ai-functionality {
             margin-top: 50px;
@@ -102,81 +87,27 @@
             text-align: center;
             margin-bottom: 20px;
         }
-        .feed-dwarf {
-            margin: 60px auto;
-            font-size: 1.3em;
+        .ai-functionality ul {
+            list-style-type: none;
+            padding-left: 0;
+            display: flex;
+            justify-content: space-around;
+            gap: 20px;
         }
-        .feed-dwarf h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2em;
-            color: #ffd700;
-            text-shadow: 0 0 10px #ffd700;
+        .ai-functionality ul li {
+            text-align: center;
+            flex: 1;
         }
-        .feed-dwarf form input {
-            font-size: 1em;
-            padding: 10px;
-            margin: 15px 0;
-            width: 60%;
-            border: 2px solid #ffd700;
-            background-color: #ffffff;
-            color: #2b2b2b;
+        .ai-functionality ul li img {
+            width: 50px;
+            margin-bottom: 10px;
         }
-        .feed-dwarf form button {
-            font-size: 1em;
-            padding: 10px 20px;
-            color: #ffffff;
-            background-color: #ffd700;
-            border: none;
-            cursor: pointer;
-            position: relative;
+        .flowchart {
+            margin-top: 40px;
         }
-        .feed-dwarf form button:hover::after {
-            content: "⛏️";
-            position: absolute;
-            right: -20px;
-            animation: miningGlow 0.5s infinite;
-        }
-        @keyframes miningGlow {
-            0% { transform: translateY(0); }
-            50% { transform: translateY(-5px); }
-            100% { transform: translateY(0); }
-        }
-        .voting-section {
-            margin-top: 60px;
-            font-size: 1.3em;
-            color: #ffffff;
-        }
-        .voting-section h2 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.8em;
-            color: #ffd700;
-            text-shadow: 0 0 5px #ffd700;
-        }
-        .vote-item {
-            font-family: 'Roboto Mono', monospace;
-            font-size: 1.2em;
-            background-color: #333333;
-            color: #ffffff;
-            border: 2px solid #ffd700;
-            padding: 10px;
-            margin: 10px auto;
-            transition: background-color 0.3s;
-        }
-        .vote-item:hover {
-            background-color: #444444;
-        }
-        .mining-counter {
-            margin: 30px 0;
-            font-family: 'Roboto Mono', monospace;
-            font-size: 1.2em;
-            color: #ffd700;
-        }
-        footer {
-            margin-top: 60px;
-            padding: 30px 0;
-            background-color: #111;
-            color: #888;
-            font-size: 1em;
+        .flowchart img {
+            width: 100%;
+            max-width: 700px;
         }
     </style>
 </head>
@@ -184,23 +115,20 @@
     <nav>
         <a href="https://x.com/SolanaAIDwarf" target="_blank">Twitter</a>
     </nav>
-    <div class="title">WELCOME TO DWARF AI ($DWARF)</div>
-    <div class="ascii-art">
-        ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⣠⣶⣿⣿⣿⣿⣿⣷⣤⡀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⣠⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⡀⠀⠀⠀⠀⠀
-⠀⠀⠀⢀⣼⣿⣿⣿⣿⣿⡿⠿⢿⣿⣿⣿⣿⣿⣷⡄⠀⠀⠀⠀
-⢀⣠⣶⣿⣿⣿⡿⠛⠉⠀⠀⠀⠀⠀⠉⠙⢿⣿⣿⣿⣶⣤⡀⠀
-⣿⡿⠋⣹⣿⠟⠀⢀⣤⡀⠀⠀⠀⠀⣠⣄⠀⠙⣿⣯⠙⢻⣿⡄
-⣿⣷⢠⣿⡏⠀⠀⠙⠟⢣⣴⣶⣶⣄⠻⠟⠀⠀⢸⣿⡇⣸⣿⠃
-⠹⣿⣿⣿⡇⠀⠀⢀⣀⣿⣿⣿⣿⣿⣀⣀⠀⠀⠀⣿⣿⣿⡟⠀
-⠀⢸⣿⣿⣷⣶⣿⡿⠿⠛⠛⠛⠛⠛⠿⢿⣿⣶⣾⣿⣿⣿⠀⠀
-⠀⠈⣿⣿⣿⣥⣀⣠⣤⣤⣶⣿⣶⣤⣤⣄⣀⣤⣽⣿⣿⡿⠀⠀
-⠀⠀⢹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠇⠀⠀
-⠀⠀⠀⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⠀⠀⠀
-⠀⠀⠀⠀⠈⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠟⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠈⠙⢿⣿⣿⣿⡿⠋⠹⡿⠟⠁⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠛⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+    <div class="title-container">
+        <div class="title">WELCOME TO DWARF AI ($DWARF)</div>
+        <div class="particles">
+            <div style="left: 0%; animation-delay: 0s;"></div>
+            <div style="left: 10%; animation-delay: 1s;"></div>
+            <div style="left: 20%; animation-delay: 1.5s;"></div>
+            <div style="left: 30%; animation-delay: 0.8s;"></div>
+            <div style="left: 40%; animation-delay: 2s;"></div>
+            <div style="left: 50%; animation-delay: 1.3s;"></div>
+            <div style="left: 60%; animation-delay: 1.1s;"></div>
+            <div style="left: 70%; animation-delay: 1.8s;"></div>
+            <div style="left: 80%; animation-delay: 0.5s;"></div>
+            <div style="left: 90%; animation-delay: 1.6s;"></div>
+        </div>
     </div>
     <div class="description">
         The ultimate memecoin AI agent, powered by dwarven mining mastery. Uncover gems, expose fool’s gold, and let DwarfAI mine the truth.
@@ -208,37 +136,24 @@
     <div class="ai-functionality">
         <h2>How DwarfAI Works</h2>
         <ul>
-            <li>🪓 Submit projects or influencers to DwarfAI for evaluation.</li>
-            <li>🔥 Vote to determine if they’re **Gems (Praise)** or **Fool’s Gold (FUD).**</li>
-            <li>💎 DwarfAI delivers AI-generated memes, insights, or FUD based on the votes.</li>
+            <li>
+                <img src="https://img.icons8.com/ios-filled/50/ffd700/mining.png" alt="Submit">
+                <p>Submit crypto projects for evaluation.</p>
+            </li>
+            <li>
+                <img src="https://img.icons8.com/ios-filled/50/ffd700/balance-scale.png" alt="Vote">
+                <p>Vote Gems (Praise) or Fool’s Gold (FUD).</p>
+            </li>
+            <li>
+                <img src="https://img.icons8.com/ios-filled/50/ffd700/gem-stone.png" alt="Results">
+                <p>AI generates memes and insights.</p>
+            </li>
         </ul>
-    </div>
-    <div class="feed-dwarf">
-        <h2>Feed the Forge</h2>
-        <p>Submit a project for DwarfAI to evaluate:</p>
-        <form id="feed-dwarf-form">
-            <input type="url" id="dwarf-link" placeholder="Paste the project link here..." required>
-            <button type="submit">Submit</button>
-        </form>
-        <div class="mining-counter" id="mining-counter">Mined Blocks: 0</div>
-    </div>
-    <div class="voting-section">
-        <h2>Gem or Fool's Gold?</h2>
-        <p>Vote for the next project DwarfAI should troll or praise:</p>
-        <div id="voting-container">
-            <!-- Dynamic voting items will appear here -->
+        <div class="flowchart">
+            <h2>How AI Mines the Truth</h2>
+            <img src="https://via.placeholder.com/700x400?text=Data+Mining+%3E+Sentiment+Analysis+%3E+Meme+Generation" alt="AI Process Flowchart">
         </div>
     </div>
     <footer>© 2024 DwarfAI | Memes, mining, and AI-powered chaos.</footer>
-    <script>
-        let minedBlocks = 0;
-        const miningCounter = document.getElementById('mining-counter');
-
-        document.getElementById('feed-dwarf-form').addEventListener('submit', function (event) {
-            event.preventDefault();
-            minedBlocks++;
-            miningCounter.textContent = `Mined Blocks: ${minedBlocks}`;
-        });
-    </script>
 </body>
 </html>
