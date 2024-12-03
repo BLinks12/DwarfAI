@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DwarfAI ($DWARF)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Montserrat:wght@400;700&family=Playfair+Display:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Uncial+Antiqua&family=Open+Sans:wght@400;700&display=swap');
         body {
-            font-family: 'Open Sans', sans-serif;
+            font-family: 'Lora', serif;
             background-color: #2b2b2b;
             color: #ffffff;
             margin: 0;
@@ -22,11 +22,17 @@
             font-size: 1.5em;
         }
         nav a {
-            text-decoration: none;
+            font-family: 'Roboto Mono', monospace;
+            font-size: 1.3em;
             color: #ffd700;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #ffffff;
         }
         .title {
-            font-family: 'Uncial Antiqua', serif;
+            font-family: 'Playfair Display', serif;
             font-size: 3em;
             margin: 40px 0;
             color: #ffd700;
@@ -70,9 +76,11 @@
         }
         .description {
             margin-top: 40px;
-            font-size: 1.5em;
+            font-size: 1.6em;
             color: #ffffff;
+            line-height: 1.6;
             padding: 0 10%;
+            text-align: center;
         }
         .ai-functionality {
             margin-top: 50px;
@@ -88,7 +96,7 @@
             margin-right: auto;
         }
         .ai-functionality h2 {
-            font-family: 'Uncial Antiqua', serif;
+            font-family: 'Playfair Display', serif;
             color: #ffd700;
             text-align: center;
             margin-bottom: 20px;
@@ -105,9 +113,10 @@
             font-size: 1.3em;
         }
         .feed-dwarf h2 {
-            color: #ffd700;
-            font-family: 'Uncial Antiqua', serif;
+            font-family: 'Playfair Display', serif;
             font-size: 2em;
+            color: #ffd700;
+            text-shadow: 0 0 10px #ffd700;
         }
         .feed-dwarf form input {
             font-size: 1em;
@@ -132,27 +141,23 @@
             color: #ffffff;
         }
         .voting-section h2 {
-            font-family: 'Uncial Antiqua', serif;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8em;
             color: #ffd700;
-            font-size: 2em;
-            margin-bottom: 20px;
+            text-shadow: 0 0 5px #ffd700;
         }
         .voting-section .vote-item {
-            margin: 15px auto;
-            padding: 15px;
-            width: 70%;
-            background-color: #3a3a3a;
-            border: 2px solid #ffd700;
+            font-family: 'Roboto Mono', monospace;
+            font-size: 1.2em;
+            background-color: #333333;
             color: #ffffff;
+            border: 2px solid #ffd700;
+            padding: 10px;
+            margin: 10px auto;
+            transition: background-color 0.3s;
         }
-        .voting-section button {
-            font-size: 1em;
-            padding: 10px 15px;
-            margin-left: 10px;
-            color: #2b2b2b;
-            background-color: #ffd700;
-            border: none;
-            cursor: pointer;
+        .vote-item:hover {
+            background-color: #444444;
         }
         footer {
             margin-top: 60px;
@@ -165,8 +170,7 @@
 </head>
 <body>
     <nav>
-        <a href="https://x.com/DwarfAI" target="_blank">Twitter</a>
-        <a href="https://t.me/DwarfAI" target="_blank">Telegram</a>
+        <a href="https://x.com/SolanaAIDwarf" target="_blank">Twitter</a>
     </nav>
     <div class="title">WELCOME TO DWARF AI ($DWARF)</div>
     <div class="ascii-art">
